@@ -1,0 +1,34 @@
+{
+  "name": "ContactUs",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "emailID": {
+      "type": "string",
+      "required": true
+    },
+    "Number": {
+      "type": "string",
+      "required": false
+    },
+    "Purpose": {
+      "type": "string",
+      "required": false
+    },
+    "Description": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

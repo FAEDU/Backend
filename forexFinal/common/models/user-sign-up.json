@@ -1,0 +1,33 @@
+{
+  "name": "UserSignUp",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "forceId": false,
+  "hidden": [
+    "password"
+  ],
+  "properties": {
+    "email": {
+      "type": "string",
+      "required": false
+    },
+    "contactNo": {
+      "type": "string"
+    },
+    "Name": {
+      "type": "string",
+      "required": false
+    },
+    "Password": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

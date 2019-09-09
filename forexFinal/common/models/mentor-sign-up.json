@@ -1,0 +1,30 @@
+{
+  "name": "MentorSignUp",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "forceId": false,
+  "properties": {
+    "email": {
+      "type": "string",
+      "required": false
+    },
+    "Name": {
+      "type": "string",
+      "required": false
+    },
+    "contactNo": {
+      "type": "string"
+    },
+    "Password": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

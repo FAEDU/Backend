@@ -1,0 +1,42 @@
+{
+  "name": "Appointment",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "S_id": {
+      "type": "string",
+      "required": true
+    },
+    "mentorId": {
+      "type": "string"
+    },
+    "Time": {
+      "type": "string"
+    },
+    "Date": {
+      "type": "string"
+    },
+    "m_name": {
+      "type": "string"
+    },
+    "m_profilePic": {
+      "type": "string"
+    },
+    "m_email": {
+      "type": "string"
+    },
+    "s_name": {
+      "type": "string"
+    },
+    "s_email": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

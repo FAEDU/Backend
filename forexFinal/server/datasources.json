@@ -1,0 +1,12 @@
+{
+  "db": {
+    "host": "ds341847.mlab.com",
+    "port": 41847,
+    "url": "",
+    "database": "foreignadmits",
+    "password": "admin123",
+    "name": "db",
+    "user": "admin",
+    "connector": "mongodb"
+  }
+}

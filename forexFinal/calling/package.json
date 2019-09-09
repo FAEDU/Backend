@@ -1,0 +1,15 @@
+{
+  "name": "calling",
+  "version": "1.0.0",
+  "description": "Calling App",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "LOL",
+  "license": "ISC",
+  "dependencies": {
+  "express": "^4.16.4",
+  "peer": "^0.2.10"
+  }
+}

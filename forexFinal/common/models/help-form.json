@@ -1,0 +1,33 @@
+{
+  "name": "help_form",
+  "plural": "HelpForm",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "CompanyName": {
+      "type": "string"
+    },
+    "helpType": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "emailID": {
+      "type": "string",
+      "required": true
+    },
+    "contactNumber": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

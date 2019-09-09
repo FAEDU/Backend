@@ -1,0 +1,70 @@
+{
+  "name": "Mentor",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "hidden": [
+    "password"
+  ],
+  "properties": {
+    "Name": {
+      "type": "string",
+      "required": true,
+      "default": "\"Mr.Mentor\""
+    },
+    "EmailID": {
+      "type": "string",
+      "required": true,
+      "default": "\"\""
+    },
+    "ContactNum": {
+      "type": "string",
+      "required": true,
+      "default": "\"\""
+    },
+    "Services": {
+      "type": "string",
+      "required": true
+    },
+    "UniversityName": {
+      "type": "string",
+      "required": true,
+      "default": "\"\""
+    },
+    "Major": {
+      "type": "string"
+    },
+    "Specialization": {
+      "type": "string"
+    },
+    "ResumeUrl": {
+      "type": "string"
+    },
+    "LinkedInUrl": {
+      "type": "string"
+    },
+    "ProfilePic": {
+      "type": "string"
+    },
+    "Hrs": {
+      "type": "number"
+    },
+    "Availability": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "Password": {
+      "type": "string",
+      "required": true,
+      "default": "\"1234567\""
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

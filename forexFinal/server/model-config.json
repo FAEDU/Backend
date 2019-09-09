@@ -1,0 +1,122 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "students": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Mentor": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Universities": {
+    "dataSource": "db",
+    "public": true
+  },
+  "AirTravelCompanies": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Forex_Companies": {
+    "dataSource": "db",
+    "public": true
+  },
+  "help_form": {
+    "dataSource": "db",
+    "public": true
+  },
+  "loanCompanies": {
+    "dataSource": "db",
+    "public": true
+  },
+  "ForexHelpForm": {
+    "dataSource": "db",
+    "public": true
+  },
+  "AirTravelForm": {
+    "dataSource": "db",
+    "public": true
+  },
+  "LoanInfoForm": {
+    "dataSource": "db",
+    "public": true
+  },
+  "UserSignUp": {
+    "dataSource": "db",
+    "public": true
+  },
+  "MentorSignUp": {
+    "dataSource": "db",
+    "public": true
+  },
+  "ContactUs": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Accomodation": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Events": {
+    "dataSource": "db",
+    "public": true
+  },
+  "MockVisaInterview": {
+    "dataSource": "db",
+    "public": true
+  },
+  "MockVisaInterviewForm": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Appointment": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Documents": {
+    "dataSource": "db",
+    "public": true
+  },
+  "DreamCollege": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Blog": {
+    "dataSource": "db",
+    "public": true
+  }
+}

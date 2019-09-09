@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/0.3.9/peer.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+</head>
+<body>
+    <button id="start-call">start call</button>
+    <audio controls></audio>
+    <script>
+var from = getParameterByName('from');
+var to = getParameterByName('to');
+var peer = new Peer(from, {host: 'mighty-basin-47483.herokuapp.com', port:'',path: '/ParvCalling'});
+function getParameterByName(name){
+name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+results = regex.exec(location.search);
+return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+function getAudio(successCallback, errorCallback){
+    navigator.getUserMedia({
+        audio: true,
+        video: false
+    }, successCallback, errorCallback);
+}
+function onReceiveCall(call){
+
+    console.log('peer is calling...');
+    console.log(call);
+    getAudio(
+        function(MediaStream){
+            call.answer(MediaStream);
+            console.log('answering call started...');
+        },
+        function(err){
+            console.log('an error occured while getting the audio');
+            console.log(err);
+        }
+    );
+    call.on('stream', onReceiveStream);
+}
+function onReceiveStream(stream){
+    var audio = document.querySelector('audio');
+    audio.srcObject = stream;
+    audio.onloadedmetadata = function(e){
+        console.log('now playing the audio');
+        audio.play();
+    }
+}
+
+peer.on('open', function(id){
+    console.log('My peer ID is: ' + id);
+});
+peer.on('call', onReceiveCall);
+$('#start-call').click(function(){
+  console.log('starting call...');
+    getAudio(function(MediaStream){
+            console.log('now calling ' + to);
+            var call = peer.call(to, MediaStream);
+            call.on('stream', onReceiveStream);
+        },
+        function(err){
+            console.log('an error occured while getting the audio');
+            console.log(err);
+        }
+    );
+
+});
+      </script>

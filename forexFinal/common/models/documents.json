@@ -1,0 +1,27 @@
+{
+  "name": "Documents",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "S_ID": {
+      "type": "string",
+      "required": true
+    },
+    "M_id": {
+      "type": "string"
+    },
+    "LOR": {
+      "type": "string"
+    },
+    "SOP": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

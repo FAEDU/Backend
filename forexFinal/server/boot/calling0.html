@@ -1,0 +1,123 @@
+<html lang="en">
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/0.3.9/peer.min.js" async="false"></script>
+    <title>test</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href=" https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Calling page</title>
+
+
+</head>
+<body>
+<center>
+    <audio controls></audio>
+    <input id="to"></input>
+    <button class="btn waves-effect blue waves-light" id="start-call">start call</button>
+<button class="btn waves-effect red waves-light" onclick="CloseConnection()">Close call</button>
+
+
+    </center>
+
+    <div class="mycard">
+        <div class="caller-img">
+            <img src="img/caller.jpg" alt="">
+        </div>
+        <div class="number text-center"><p>+91-78594-85678</p></div>
+        <div class="buttons">
+        <div class="row">
+            <div class="col-lg-6 col text-center"><button type="button" class="answer">Answer</button> </div>
+            <div class="col-lg-6 col text-center"><button type="button" class="reject">Reject</button></div>
+        </div>
+    </div>
+    </div>
+
+
+<script>
+var from = getParameterByName('from');
+var to = getParameterByName('to');
+var peer = new Peer(from, {host: 'mighty-basin-47483.herokuapp.com', port:'',path: '/ParvCalling'});
+function CloseConnection(){
+window.location.reload();
+}
+function getParameterByName(name){
+name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+results = regex.exec(location.search);
+return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+function getAudio(successCallback, errorCallback){
+  navigator.getUserMedia=(navigator.getUserMedia ||navigator.webkitGetUserMedia ||navigator.mozGetUserMedia ||navigator.msGetUserMedia);
+  navigator.getUserMedia({
+        audio: true,
+        video: false
+    }, successCallback, errorCallback);
+}
+
+function errorCallback(){
+alert("Call failed");
+}
+
+function onReceiveCall(call){
+var ans=confirm('pick call?');
+if(ans)
+{
+    getAudio(function(MediaStream){
+              call.answer(MediaStream);
+      },
+        function(err){
+            console.log('an error occured while getting the audio');
+            console.log(err);
+        }
+);
+    call.on('stream', onReceiveStream);
+}
+    else{
+        M.toast({html: 'Call Stopped!'})
+      call.close();
+  }
+}
+
+function onReceiveStream(stream){
+    var audio = document.querySelector('audio');
+    audio.srcObject = stream;
+    audio.onloadedmetadata = function(e){
+      M.toast({html: 'Call Started!'})
+        audio.play();
+    }
+
+}
+
+peer.on('open', function(id){
+console.log('My peer ID is: ' + id);
+});
+
+peer.on('call', onReceiveCall);
+$('#start-call').click(function(){
+if(to==undefined||to=="")
+to = document.getElementById("to").value;
+alert("calling to "+to)
+getAudio(function(MediaStream){
+var call = peer.call(to, MediaStream);
+call.on('stream', onReceiveStream);
+function onReceiveStream(stream){
+var audio = document.querySelector('audio');
+audio.srcObject = stream;
+audio.onloadedmetadata = function(e){
+audio.play();
+}
+}
+},
+        function(err){
+            alert('an error occured while getting the audio .. Please check console.');
+            console.log(err);
+        }
+    );
+
+});
+      </script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

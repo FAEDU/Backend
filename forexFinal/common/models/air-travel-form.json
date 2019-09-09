@@ -1,0 +1,38 @@
+{
+  "name": "AirTravelForm",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "CompanyName": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "contact": {
+      "type": "string"
+    },
+    "Depature": {
+      "type": "string"
+    },
+    "Destination": {
+      "type": "string"
+    },
+    "Date": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

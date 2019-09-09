@@ -1,0 +1,73 @@
+{
+  "name": "students",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "forceId": false,
+  "hidden": [
+    "password"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "default": "\"\""
+    },
+    "emailID": {
+      "type": "string",
+      "required": true,
+      "default": "\"\""
+    },
+    "contactNo": {
+      "type": "string",
+      "required": true
+    },
+    "ApplyingFor": {
+      "type": "any"
+    },
+    "TargetAppSession": {
+      "type": "any"
+    },
+    "StudyField": {
+      "type": "string",
+      "default": "\"\""
+    },
+    "Specialization": {
+      "type": "string",
+      "default": "\"\""
+    },
+    "StudyCountry": {
+      "type": "string",
+      "default": "\"\""
+    },
+    "GreScore": {
+      "type": "any"
+    },
+    "ToeflIeltsScore": {
+      "type": "string",
+      "default": "\"\""
+    },
+    "UgGPA": {
+      "type": "any"
+    },
+    "UgUniversity": {
+      "type": "string",
+      "default": "\"\""
+    },
+    "ResumeUrl": {
+      "type": "string",
+      "default": "\"\""
+    },
+    "password": {
+      "type": "string",
+      "required": true,
+      "default": "1234567"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

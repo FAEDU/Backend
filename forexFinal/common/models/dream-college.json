@@ -1,0 +1,43 @@
+{
+  "name": "DreamCollege",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Email": {
+      "type": "string",
+      "required": true
+    },
+    "Phone": {
+      "type": "string"
+    },
+    "Term": {
+      "type": "string"
+    },
+    "GRE Verbal": {
+      "type": "string"
+    },
+    "GRE Quant": {
+      "type": "string"
+    },
+    "IELTS": {
+      "type": "string"
+    },
+    "TOEFL": {
+      "type": "string"
+    },
+    "GPA": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

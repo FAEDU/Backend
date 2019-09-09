@@ -1,0 +1,32 @@
+{
+  "name": "LoanInfoForm",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "CompanyName": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "contact": {
+      "type": "string"
+    },
+    "loanRequirement": {
+      "type": "string"
+    },
+    "University": {
+      "type": "string"
+    },
+    "ProgramName": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

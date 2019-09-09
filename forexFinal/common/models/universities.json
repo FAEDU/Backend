@@ -1,0 +1,62 @@
+{
+  "name": "Universities",
+  "plural": "Universities",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "desc": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "imageUrl": {
+      "type": "string",
+      "required": true
+    },
+    "ranking": {
+      "type": "string",
+      "required": true
+    },
+    "location": {
+      "type": "string",
+      "required": true
+    },
+    "Country": {
+      "type": "string"
+    },
+    "IELTS": {
+      "type": "string"
+    },
+    "TuitionFee": {
+      "type": "string",
+      "required": true
+    },
+    "TopRecruiters": {
+      "type": "string",
+      "required": true
+    },
+    "GRE": {
+      "type": "string"
+    },
+    "TOEFL": {
+      "type": "string"
+    },
+    "GRE_TOEFL": {
+      "type": "boolean",
+      "default": false
+    },
+    "courses": {
+      "type": "array"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
