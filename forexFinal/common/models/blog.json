@@ -17,6 +17,9 @@
     },
     "Author": {
       "type": "string"
+    },
+    "Category": {
+      "type": "string"      
     }
   },
   "validations": [],
