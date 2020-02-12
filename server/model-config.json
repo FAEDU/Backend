@@ -118,5 +118,9 @@
   "Blog": {
     "dataSource": "db",
     "public": true
+  },
+  "Subscribers" : {
+    "dataSource": "db",
+    "public": true
   }
 }
